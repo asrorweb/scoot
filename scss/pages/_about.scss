@@ -1,0 +1,249 @@
+.hero {
+    &__about {
+        overflow: hidden;
+        position: relative;
+        background: linear-gradient(
+                rgb(47, 59, 89, 0.75),
+                rgb(47, 59, 89, 0.75)
+            ),
+            url("../images/about-hero-bg-img.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-bottom: 12rem;
+
+        .global__hero--list {
+            position: absolute;
+            right: -32px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            gap: 2.4rem;
+
+            @include responsive(mobile) {
+                display: none;
+            }
+
+            .global__hero--circle {
+                display: block;
+                width: 62px;
+                height: 62px;
+                border: 3px solid #fff;
+                border-radius: 50%;
+
+                &:last-child {
+                    background-color: #fff;
+                }
+            }
+        }
+
+        @include responsive(tablet) {
+            background-position: center;
+        }
+
+        @include responsive(mobile) {
+            background-position-y: 100%;
+            background-position-x: 30%;
+        }
+    }
+
+    &__global {
+        padding-top: 7.2rem;
+        padding-bottom: 7.2rem;
+        color: $white-text-color;
+
+        @include responsive(mobile) {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+
+        &--title {
+            margin: 0;
+        }
+    }
+
+    &__contanier {
+        @include responsive(mobile) {
+            text-align: center;
+        }
+    }
+}
+
+.about__main-section {
+    margin-bottom: 12rem;
+    .main__information__item:not(:last-child) {
+        margin-bottom: 12rem;
+    }
+}
+
+// our-values
+.our-values {
+    margin-bottom: 12rem;
+
+    @include responsive(mobile) {
+        margin-bottom: 14.5rem;
+    }
+
+    &__title {
+        text-align: center;
+        margin-bottom: 10.3rem;
+    }
+
+    &__list {
+        @include displayGrid(300px, 1fr, 5.5rem, 3rem);
+        text-align: center;
+
+        @include responsive(mobile) {
+            @include displayGrid(150px, 1fr, 5.5rem, 3rem);
+        }
+    }
+
+    &__item {
+        &:nth-child(2) .our-values__img::after {
+            content: "02";
+        }
+
+        &:nth-child(3) .our-values__img::after {
+            content: "03";
+        }
+
+        &--title {
+            margin-bottom: 2.7rem;
+        }
+    }
+
+    &__img {
+        position: relative;
+        margin-bottom: 8.7rem;
+
+        &::after {
+            content: "01";
+            position: absolute;
+            padding: 3.4rem;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: $primary-bg-color-yellow;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include font(700, 2.4rem, 2.8rem, -1.07px);
+            color: #495567;
+            border-radius: 50%;
+        }
+
+        img {
+            margin-inline: auto;
+            border-radius: 50%;
+
+            @include responsive(mobile) {
+                width: 100%;
+            }
+        }
+
+        @include responsive(mobile) {
+            margin-bottom: 6.4rem;
+        }
+    }
+}
+
+// faqs
+.faqs {
+    margin-bottom: 16rem;
+
+    @include responsive(tablet) {
+        margin-bottom: 12rem;
+    }
+
+    &__title {
+        margin-bottom: 6.4rem;
+        text-align: center;
+
+        @include responsive(mobile) {
+            margin-bottom: 4.8rem;
+        }
+    }
+
+    &__box--top {
+        margin-bottom: 6.4rem;
+    }
+    .howto-work {
+        display: flex;
+        justify-content: space-between;
+
+        @include responsive(tablet) {
+            flex-direction: column;
+        }
+
+        &__title {
+            @include responsive(tablet) {
+                margin-bottom: 3.2rem;
+                text-align: center;
+            }
+        }
+
+        &__list {
+            max-width: 730px;
+            width: 100%;
+        }
+
+        &__item {
+            color: $dark-navy-text-color-495567;
+            padding: 3.2rem 4rem;
+            background-color: $snow-bg-color-f2f5f9;
+            position: relative;
+            cursor: pointer;
+
+            @include responsive(mobile) {
+                padding: 3.2rem 6rem 3.2rem 3.2rem;
+            }
+
+            &:hover {
+                background-color: #fff4df;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+
+            &--title {
+                margin-bottom: 2.4rem;
+                user-select: none;
+            }
+
+            &--description {
+                user-select: none;
+                display: none;
+            }
+
+            &--arrow {
+                position: absolute;
+                top: 42px;
+                right: 4rem;
+                transform: rotate(180deg);
+                user-select: none;
+            }
+
+            &--description {
+                display: none;
+            }
+        }
+        &__item--active {
+            .howto-work__item--arrow {
+                transform: rotate(360deg);
+            }
+
+            .howto-work__item--description {
+                display: block;
+            }
+        }
+    }
+}
+/***************** bg image for  retina screen ***************************/
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+}

@@ -1,0 +1,51 @@
+.hero__careers {
+    background: linear-gradient(rgb(47, 59, 89, 0.75), rgb(47, 59, 89, 0.75)),
+        url("../images/location-hero-bg-img.png") no-repeat;
+    background-size: cover;
+}
+
+// services
+.services {
+    margin-bottom: 16rem;
+
+    @include responsive(mobile) {
+        margin-bottom: 12rem;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 3.2rem 6.4rem 3.5rem 4rem;
+        background-color: $snow-bg-color-f2f5f9;
+        color: $dark-navy-bg-color-495567;
+
+        @include responsive(maxwidth_700px) {
+            padding: 3.2rem;
+        }
+
+        @include responsive(mobile) {
+            text-align: center;
+            flex-direction: column;
+            padding-top: 3.6rem;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 2.4rem;
+
+            @include responsive(mobile) {
+                margin-bottom: 1.6rem;
+            }
+        }
+    }
+
+    &__content--box {
+        @include responsive(mobile) {
+            margin-bottom: 1.6rem;
+        }
+    }
+
+    &__btn {
+        cursor: pointer;
+    }
+}

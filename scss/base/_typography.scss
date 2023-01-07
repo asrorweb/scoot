@@ -1,0 +1,50 @@
+h1 {
+    @include font(700, 5.6rem, 1, -2.5px);
+
+    @include responsive(mobile) {
+        @include font(700, 4rem, 1, -1.78571px);
+    }
+}
+
+h2 {
+    @include font(700, 4.8rem, 1, -2.14286px);
+
+    @include responsive(mobile) {
+        @include font(700, 3.2rem, 1, -1.42857px);
+    }
+}
+
+h3 {
+    @include font(700, 4rem, 1.2, -1.78571px);
+
+    @include responsive(mobile) {
+        @include font(700, 2.4rem, 1.17, -1.07143px);
+    }
+}
+
+h4 {
+    @include font(700, 2.4rem, 1.17, -1.07143px);
+
+    @include responsive(mobile) {
+        @include font(700, 2rem, 1.4, -0.892857px);
+    }
+}
+
+p {
+    font-family: "Lexend Deca", Arial, Helvetica, sans-serif;
+    @include font(400, 1.5rem, 2.5rem, normal);
+    color: $dim-grey-text-color-939caa;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: flex;
+}

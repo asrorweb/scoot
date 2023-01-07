@@ -1,0 +1,395 @@
+//home hero
+/* home hero */
+.home__hero {
+    padding-top: 15.3rem;
+    padding-bottom: 15.2rem;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(rgba(47, 59, 89, 0.75), rgba(47, 59, 89, 0.75)),
+        url("../images/home-hero-bg-img.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @include responsive(tablet) {
+        background-position-x: 80%;
+    }
+
+    &--bg1 {
+        position: absolute;
+        top: 353px;
+        left: 0;
+        @include responsive(maxwidth_1100px) {
+            display: none;
+        }
+    }
+
+    &--bg2 {
+        position: absolute;
+        top: 353px;
+        right: 28.8rem;
+        @include responsive(maxwidth_1100px) {
+            right: 0;
+        }
+
+        @include responsive(maxwidth_970px) {
+            top: 3rem;
+        }
+
+        @include responsive(tablet) {
+            top: auto;
+            bottom: 4rem;
+            left: -12.7rem;
+        }
+
+        @include responsive(mobile) {
+            top: auto;
+            bottom: 3.4rem;
+            left: -31.2rem;
+        }
+    }
+
+    @include responsive(tablet) {
+        padding-top: 13.7rem;
+        padding-bottom: 21.7rem;
+    }
+
+    @include responsive(mobile) {
+        padding-top: 11.5rem;
+        padding-bottom: 17.9rem;
+    }
+
+    &--content {
+        max-width: 500px;
+        width: 100%;
+
+        @include responsive(tablet) {
+            max-width: 573px;
+            margin: auto;
+            text-align: center;
+        }
+
+        @include responsive(mobile) {
+            width: 100%;
+        }
+    }
+
+    &--title {
+        margin: 0;
+        margin-bottom: 4rem;
+        color: $white-text-color;
+
+        @include responsive(tablet) {
+            margin-bottom: 2.4rem;
+        }
+    }
+
+    &--description--box {
+        display: block;
+        max-width: 405px;
+        width: 100%;
+        margin-left: auto;
+
+        @include responsive(tablet) {
+            width: 100%;
+            margin: auto;
+        }
+    }
+
+    &--description {
+        margin-bottom: 4rem;
+        position: relative;
+        color: $white-text-color;
+
+        @include responsive(tablet) {
+            margin-bottom: 3.4rem;
+        }
+    }
+}
+
+// little__information
+/*little__information*/
+.little__information {
+    padding-top: 16rem;
+    padding-bottom: 20rem;
+
+    @include responsive(tablet) {
+        padding-top: 12.2rem;
+        padding-bottom: 14.2rem;
+    }
+
+    @include responsive(mobile) {
+        padding-top: 12rem;
+        padding-bottom: 12rem;
+    }
+
+    &__list {
+        @include displayGrid(330px, 1fr, 4rem, 3rem);
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: -25%;
+            width: 100%;
+            top: 4.8rem;
+            z-index: -5;
+            transform: translateY(-50%);
+            height: 15px;
+            background-color: $light-grey-bg-e5ecf4;
+
+            @include responsive(tablet) {
+                width: 0;
+            }
+        }
+
+        @include responsive(mobile) {
+            text-align: center;
+            row-gap: 4.8rem;
+            @include displayGrid(200px, 1fr, 4rem, 3rem);
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+
+        @include responsive(tablet) {
+            flex-direction: row;
+            justify-content: space-evenly;
+
+            &:last-child .little__information_img::before {
+                content: "";
+                position: absolute;
+                // top: 0;
+                bottom: 0;
+                width: 15px;
+                height: 600px;
+                z-index: -5;
+                background-color: $light-grey-bg-e5ecf4;
+
+                @include responsive(maxwidth_600px) {
+                    width: 0;
+                }
+            }
+        }
+
+        @include responsive(maxwidth_600px) {
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+
+    &_img {
+        width: 96px;
+        height: 96px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $primary-bg-color-yellow;
+        border-radius: 50%;
+        margin-bottom: 4rem;
+        position: relative;
+
+        @include responsive(tablet) {
+            margin-bottom: 0;
+        }
+
+        @include responsive(maxwidth_600px) {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 2.4rem;
+
+            & img {
+                width: 23px;
+            }
+        }
+
+        @include responsive(mobile) {
+            margin-inline: auto;
+        }
+    }
+
+    &__content--box {
+        max-width: 400px;
+        width: 100%;
+    }
+
+    &__title {
+        margin-bottom: 4rem;
+        color: $dark-navy-text-color-495567;
+
+        @include responsive(tablet) {
+            margin-bottom: 2.7rem;
+        }
+
+        @include responsive(mobile) {
+            margin-bottom: 2.4rem;
+        }
+    }
+}
+
+// main__information
+/* main__information */
+.main__information {
+    margin-bottom: 30.3rem;
+    overflow: hidden;
+
+    @include responsive(tablet) {
+        margin-bottom: 10.4rem;
+    }
+
+    @include responsive(tablet) {
+        margin-bottom: 12rem;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+        // before and after
+        & .main__information__item__img--box::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            z-index: 15;
+            right: 0;
+            background: url("../images/global-yellow-line.svg");
+            width: 734px;
+            height: 151px;
+
+            @include responsive(maxwidth_970px) {
+                width: 0;
+            }
+
+            @include responsive(tablet) {
+                width: 734px;
+            }
+        }
+
+        & .main__information__item__img--box::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -530px;
+            width: 100%;
+            height: 100%;
+            background-color: #e5ecf4;
+            border-radius: 50%;
+            z-index: 14;
+        }
+
+        &:nth-child(1) .main__information__item__img--box::before {
+            right: -46%;
+
+            @include responsive(maxwidth_600px) {
+                right: -80%;
+            }
+
+            @include responsive(mobile) {
+                right: -150%;
+            }
+        }
+
+        &:nth-child(2n) {
+            flex-direction: row-reverse;
+            & .main__information__item__img--box::before {
+                background: url("../images/global-yellow-line-left.svg");
+                top: 0;
+                right: auto;
+                left: -520px;
+            }
+
+            & .main__information__item__img--box::after {
+                left: -490px;
+            }
+
+            @include responsive(tablet) {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+        }
+
+        &:nth-child(3) .main__information__item__img--box::before {
+            top: 90px;
+            right: -50%;
+
+            @include responsive(maxwidth_600px) {
+                right: -80%;
+            }
+
+            @include responsive(mobile) {
+                top: 0;
+                right: -180%;
+            }
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 15.5rem;
+
+            @include responsive(tablet) {
+                margin-bottom: 12.8rem;
+            }
+
+            @include responsive(mobile) {
+                margin-bottom: 12rem;
+            }
+        }
+
+        @include responsive(tablet) {
+            flex-direction: column-reverse;
+            text-align: center;
+        }
+
+        &__content {
+            max-width: 445px;
+            width: 100%;
+
+            &--title {
+                margin-bottom: 2.4rem;
+
+                @include responsive(tablet) {
+                    margin-bottom: 4rem;
+                }
+
+                @include responsive(mobile) {
+                    margin-bottom: 3.2rem;
+                }
+            }
+
+            &--description {
+                margin-bottom: 4rem;
+
+                @include responsive(mobile) {
+                    margin-bottom: 3.2rem;
+                }
+            }
+        }
+
+        &__img--box {
+            position: relative;
+        }
+
+        &--img {
+            max-width: 445px;
+            width: 100%;
+            border-radius: 50%;
+            position: relative;
+
+            @include responsive(tablet) {
+                margin-bottom: 5.6rem;
+            }
+        }
+    }
+}
+
+/***************** bg image for  retina screen ***************************/
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+}

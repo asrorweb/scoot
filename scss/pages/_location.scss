@@ -1,0 +1,64 @@
+.map {
+    margin-bottom: 12rem;
+
+    @include responsive(mobile) {
+        margin-bottom: 7.2rem;
+    }
+
+    &__img--box {
+        position: relative;
+    }
+
+    &__img {
+        width: 100%;
+        object-fit: cover;
+        margin-bottom: 12rem;
+
+        @include responsive(mobile) {
+            margin-bottom: 4rem;
+        }
+    }
+}
+
+.country__list {
+    display: none;
+    text-align: center;
+    margin-bottom: 7.2rem;
+
+    @include responsive(mobile) {
+        display: block;
+    }
+}
+
+.country__item {
+    padding-top: 2.2rem;
+    padding-bottom: 2.2rem;
+    background-color: rgba(252, 183, 43, 0.15);
+
+    &:not(:last-child) {
+        margin-bottom: 1.6rem;
+    }
+}
+
+.your-city {
+    margin-bottom: 12rem;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 2rem;
+
+        @include responsive(tablet) {
+            text-align: center;
+            flex-direction: column;
+            gap: 4rem;
+        }
+    }
+
+    &__description {
+        max-width: 445px;
+        width: 100%;
+    }
+}

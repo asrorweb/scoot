@@ -1,0 +1,121 @@
+// signUp
+.signUp {
+    background-color: #495567;
+    color: $white-text-color;
+    position: relative;
+    overflow: hidden;
+
+    .bg__circle--list {
+        position: absolute;
+        bottom: -197px;
+        right: -174px;
+        z-index: 0;
+        display: flex;
+        align-items: center;
+        gap: 5.6rem;
+
+        .bg__circle--item {
+            display: block;
+            width: 347px;
+            height: 347px;
+            border: 15px solid #e5ecf4;
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+
+        .bg__circle--item:last-child {
+            background-color: #e5ecf4;
+        }
+    }
+
+    &__container {
+        padding-top: 10.2rem;
+        padding-bottom: 10.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include responsive(tablet) {
+            padding-top: 6.2rem;
+            padding-bottom: 6.2rem;
+            flex-direction: column;
+            text-align: center;
+            gap: 4rem;
+        }
+
+        @include responsive(mobile) {
+            padding-top: 8.8rem;
+            padding-bottom: 8.8rem;
+        }
+    }
+
+    &__list {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.8rem;
+    }
+
+    &__item:first-child svg {
+        max-width: 159px;
+        width: 100%;
+    }
+    &__item:last-child svg {
+        max-width: 182px;
+        width: 100%;
+    }
+}
+
+.footer {
+    &__nav {
+        padding-top: 3.5rem;
+        padding-bottom: 3.25rem;
+        background-color: #333a44;
+
+        padding-top: 6.4rem;
+        padding-bottom: 8.8rem;
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        gap: 5.818rem;
+
+        @include responsive(maxwidth_700px) {
+            flex-direction: column;
+            gap: 4.15rem;
+        }
+
+        .navigation {
+            @include responsive(maxwidth_700px) {
+                flex-direction: column;
+                gap: 8.5rem;
+            }
+
+            &__list {
+                @include responsive(maxwidth_700px) {
+                    margin-right: auto;
+                    margin-left: auto;
+
+                    @include responsive(maxwidth_700px) {
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+    }
+
+    &__social--list {
+        display: flex;
+        align-items: center;
+        gap: 2.4rem;
+    }
+
+    &__social--link {
+        &:hover svg path {
+            fill: #e5ecf4;
+        }
+    }
+}

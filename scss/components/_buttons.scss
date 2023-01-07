@@ -1,0 +1,42 @@
+.btn {
+    display: inline-block;
+    @include font(700, 1.5rem, 2.5rem, normal);
+    width: 180px;
+    text-align: center;
+    color: $white-text-color;
+    background-color: $primary-bg-color-yellow;
+    border: 3px solid $primary-bg-color-yellow;
+    padding: 1.1rem 0;
+
+    &:hover {
+        color: $primary-text-color-yellow;
+        background-color: $white-bg-color;
+        // padding: 1.1rem 0;
+    }
+}
+
+// header
+.burger__menu {
+    display: none;
+    border: 0;
+    background-color: inherit;
+    width: 20px;
+    height: 16px;
+    cursor: pointer;
+
+    @include responsive(maxwidth_700px) {
+        display: block;
+    }
+}
+
+.dark-shadow {
+    display: none;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.75);
+    transition: 0.3s;
+}
