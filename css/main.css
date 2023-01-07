@@ -834,6 +834,9 @@ img {
     margin-bottom: 3.4rem;
   }
 }
+.home__hero--btn:hover {
+  background-color: inherit;
+}
 
 /*little__information*/
 .little__information {
